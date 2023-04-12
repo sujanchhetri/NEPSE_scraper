@@ -1,8 +1,8 @@
 name: Resources
 on:
   schedule:
-    - cron: "0 13 * * 1"
-  # workflow_dispatch:
+    - cron:  '30 5,17 * * *'
+    # workflow_dispatch:
 permissions:
   contents: write
 jobs:
@@ -23,6 +23,6 @@ jobs:
       - name: Update resources
         uses: test-room-7/action-update-file@v1
         with:
-          file-path: ShareData
+          file-path: ./views/ShareData
           commit-msg: Update resources
           github-token: ${{ secrets.GITHUB_TOKEN }}
